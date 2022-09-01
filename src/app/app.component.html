@@ -1,0 +1,59 @@
+<!--da bi se prikazao sadrzaj iz html-a drugih komponenti, moraju biti importovane ovde ovako-->
+<!-- <app-obrazovanje></app-obrazovanje>
+<button mat-button>Press</button> -->
+
+<mat-sidenav-container class="example-container">
+  <mat-sidenav mode="over" [fixedInViewport]="true" opened mode="side">
+    <mat-accordion>
+
+      <a mat-button style="text-align: center">
+        <mat-icon [routerLink]="['/home']">home</mat-icon>
+      </a>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Aplikacija
+          </mat-panel-title>
+          <mat-panel-description>
+            Aplikacija za vodjenje evidencije
+          </mat-panel-description>
+
+        </mat-expansion-panel-header>
+        <mat-nav-list>
+          <a mat-button [routerLink]="['/obrazovanje']">Obrazovanje</a> <!--ovde pravimo rute na koje vodi dugme-->
+        </mat-nav-list>
+        <mat-nav-list>
+          <a mat-button [routerLink]="['/preduzece']">Preduzece</a>
+        </mat-nav-list>
+        <mat-nav-list>
+          <a mat-button [routerLink]="['/sektor']">Sektor</a>
+        </mat-nav-list>
+        <mat-nav-list>
+          <a mat-button [routerLink]="['/radnik']">Radnik</a>
+        </mat-nav-list>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Informacije
+          </mat-panel-title>
+          <mat-panel-description>
+            Osnovne informacije o aplikaciji
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-nav-list>
+          <a mat-button [routerLink]="['/about']">About</a>
+        </mat-nav-list>
+        <mat-nav-list>
+          <a mat-button [routerLink]="['/author']">Author</a>
+        </mat-nav-list>
+
+      </mat-expansion-panel>
+
+    </mat-accordion>
+
+  </mat-sidenav>
+
+  <router-outlet></router-outlet><!--ovo naznacava da ce biti izvrsen prikaz komponenti ka kojima smo rutirali, bez ovoga routerLink kod dugmica ne radi-->
+</mat-sidenav-container>
